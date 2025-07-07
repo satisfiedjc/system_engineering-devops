@@ -1,0 +1,96 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+
+for i in {1..10}
+do
+  echo "Best School"
+done
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+
+count=1
+while [ $count -le 10 ]
+do
+  echo "Best School"
+  ((count++))
+done
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+
+count=1
+until [ $count -gt 10 ]
+do
+  echo "Best School"
+  ((count++))
+done
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times, but for the 9th iteration, displays "Best School" followed by "Hi".
+
+count=1
+while [ $count -le 10 ]
+do
+  if [ $count -eq 9 ]; then
+    echo "Best School"
+    echo "Hi"
+  else
+    echo "Best School"
+  fi
+  ((count++))
+done
+#!/usr/bin/env bash
+# This script loops from 1 to 10 displaying bad luck for the 4th iteration, good luck for the 8th iteration, and Best School for others.
+
+count=1
+while [ $count -le 10 ]
+do
+  if [ $count -eq 4 ]; then
+    echo "bad luck"
+  elif [ $count -eq 8 ]; then
+    echo "good luck"
+  else
+    echo "Best School"
+  fi
+  ((count++))
+done
+#!/usr/bin/env bash
+# This script displays numbers from 1 to 20, with specific messages for 4, 9, and 17.
+
+count=1
+while [ $count -le 20 ]
+do
+  case $count in
+    4)
+      echo "4"
+      echo "bad luck from China"
+      ;;
+    9)
+      echo "9"
+      echo "bad luck from Japan"
+      ;;
+    17)
+      echo "17"
+      echo "bad luck from Italy"
+      ;;
+    *)
+      echo $count
+      ;;
+  esac
+  ((count++))
+done
+#!/usr/bin/env bash
+# This script checks if the "school" file exists, is empty, and if it's a regular file.
+
+if [ -e school ]; then
+  echo "school file exists"
+  if [ -s school ]; then
+    echo "school file is not empty"
+  else
+    echo "school file is empty"
+  fi
+  
+  if [ -f school ]; then
+    echo "school is a regular file"
+  fi
+else
+  echo "school file does not exist"
+fi
