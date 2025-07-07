@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script displays the content of the current directory in a list format,
+# showing only the part after the first dash in the file or directory names.
+
+for file in */
+do
+  # Remove trailing slash and extract the part after the first dash
+  name=$(echo "$file" | sed 's/^[^-]*-//')
+  echo "$name"
+done
