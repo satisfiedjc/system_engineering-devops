@@ -1,10 +1,28 @@
 #!/usr/bin/env bash
-# This script displays the content of the current directory in a list format,
-# showing only the part after the first dash in the file or directory names.
+# This script displays numbers from 1 to 20 with specific messages for certain numbers:
+# - 4: bad luck from China
+# - 9: bad luck from Japan
+# - 17: bad luck from Italy
 
-for file in */
+count=1
+while [ $count -le 20 ]
 do
-  # Remove trailing slash and extract the part after the first dash
-  name=$(echo "$file" | sed 's/^[^-]*-//')
-  echo "$name"
+  case $count in
+    4)
+      echo "4"
+      echo "bad luck from China"
+      ;;
+    9)
+      echo "9"
+      echo "bad luck from Japan"
+      ;;
+    17)
+      echo "17"
+      echo "bad luck from Italy"
+      ;;
+    *)
+      echo $count
+      ;;
+  esac
+  ((count++))
 done
